@@ -5,7 +5,57 @@
     <title>What Do I Do Now?</title>
   </head>
   <body>
+
+  <!--Header-->
+    <header id="main-title">
+        <h1>What Do I Do Now?</h1>
+    </header>
+  
+  <!--Assigned Task Section-->
+    <section id="do-this">
+      <h2>Do This:</h2>
+      <div id="assigned-task">
+
+      <!--Empty div to be filled with assigned task from JS-->
+      
+      </div>
+    </section>
     
-    
+  <!--Task Input Section-->
+    <section id="need-something-done">
+      <h3>Need something done?</h3>
+
+      <form>
+        <input type="text" placeholder="Write it here." />
+      </form>
+
+      <!--Specify Date for Inputted Task-->
+      <h3>When does this task need to be complete?</h3>
+
+      <button type="button">
+          Today
+      </button>
+          
+      <button type="button">
+          This Week
+      </button>
+
+      <button type="button">
+          This Month
+      </button>
+
+      <div>
+        <p>OR</p>
+        <form>
+          <input type="date" />
+        </form>
+      </div>
+      <br>
+      <!--Submit Task Button-->
+      <button type="submit" id="submit-btn">
+        Submit Task
+      </button>
+    </section>
+
   </body>
 </html>
