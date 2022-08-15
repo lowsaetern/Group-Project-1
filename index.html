@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>What Do I Do Now?</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/skeleton.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
 
   <!--Header-->
-    <header id="main-title">
+    <header class="container" id="main-title">
         <h1>What Do I Do Now?</h1>
     </header>
   
   <!--Assigned Task Section-->
-    <section id="do-this">
+    <section class="container" id="do-this">
       <h2>Do This:</h2>
       <div id="assigned-task">
 
@@ -23,7 +25,7 @@
       <!--Amazon Product Search API-->
       <form  id="stuff-form">
         <input id="input-stuff" type="search" />
-        <button id="search-stuff">
+        <button class="button-primary" id="search-stuff">
             Search
         </button>
       </form>
@@ -32,7 +34,7 @@
       <!--Yelp Business Search API-->
       <form id="business-form">
         <input id="input-business" type="search" />
-        <button id="search-business">
+        <button class="button-primary" id="search-business">
           Search
         </button>
       </form>
@@ -40,7 +42,7 @@
     </section>
     
   <!--Task Input Section-->
-    <section id="need-something-done">
+    <section class="container" id="need-something-done">
       <h3>Need something done?</h3>
 
       <form id="input-task">
@@ -50,15 +52,15 @@
       <!--Specify Date for Inputted Task-->
       <h3>When does this task need to be complete?</h3>
 
-      <button id="today-Btn" type="button">
+      <button class="button-primary" id="today-Btn" type="button">
           Today
       </button>
           
-      <button id="this-week-Btn" type="button">
+      <button class="button-primary" id="this-week-Btn" type="button">
           This Week
       </button>
 
-      <button id="this-month-Btn" type="button">
+      <button class="button-primary" id="this-month-Btn" type="button">
           This Month
       </button>
 
@@ -70,7 +72,7 @@
       </div>
       <br>
       <!--Submit Task Button-->
-      <button type="submit" id="submit-Btn">
+      <button class="button-primary" type="submit" id="submit-Btn">
         Submit Task
       </button>
     </section>
