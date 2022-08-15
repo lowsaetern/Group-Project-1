@@ -1,3 +1,8 @@
+* {
+  background-color: #b3cccc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -34,7 +39,8 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+}
 .column,
 .columns {
   width: 100%;
@@ -232,6 +238,8 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
+/* added type = date to skelton CSS */
+input[type="date"],
 textarea,
 select {
   height: 38px;
@@ -249,6 +257,8 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
+/* added type = date to skelton CSS */
+input[type="date"],
 textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -264,9 +274,11 @@ input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
+/* added type = date to skelton CSS */
+input[type="date"],
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid #000000;
   outline: 0; }
 label,
 legend {
