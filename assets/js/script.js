@@ -4,6 +4,7 @@ var thisWeekBtn = document.getElementById("this-week-Btn")
 var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
+var mapQuestKey = "OcKnsyCp8AyFKJFn7FCK6vjD4eihKGIv"
 
 
 // FUNCTIONS
@@ -35,7 +36,16 @@ function searchStuff(e) {
 }
 
 // MapQuest search API
+function searchLocation(e) {
+    e.preventDefault()
+    var inputLocation = document.getElementById("location")
 
+    fetch("http://www.mapquestapi.com/search/v2/radius?api_key=" + mapQuestKey)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+    })
+}
 
 
 stuffSearchBtn.addEventListener('click', searchStuff)
