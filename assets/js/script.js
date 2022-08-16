@@ -8,7 +8,21 @@ var yelpKey = "dUJs6RmTFhXg_LpfFZdZ8g2ur2grHni6hJA0ucA8avz_358XpiAqaQ89lIbJ0eVRP
 var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 
 // FUNCTIONS
+const inputVal = document.getElementsByClassName('inputVal') [0];
+const addTaskButton = document.getElementsByClassName('addTaskButton') [0];
 
+addTaskButton.addEventListener('click' , () => {
+
+let localItems = JSON.parse(localStorage.getItem('localItem'))
+if(localItems === null) {
+    taskList = []
+
+} else{
+    taskList = localItems;
+}
+taskList.push(inputVal.value)
+localStorage.setItem('localItem', JSON.stringify(taskList))
+})
 // Today Button clicked and current date stored with task
 
 // This Week Button clicked and end-of-week date stored with task
