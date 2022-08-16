@@ -9,11 +9,19 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 
 // FUNCTIONS
 
-// Today Button clicked and current date stored with task
+// wrap in one big mega-function
+    // Text Input for "Need Something Done?"
+        //date selection - either today/this week/this month button OR specific date selection
+        // Today Button clicked and current date stored with task
 
-// This Week Button clicked and end-of-week date stored with task
+        // This Week Button clicked and end-of-week date stored with task
 
-// This Month Button clicked and end-of-month date stored with task
+        // This Month Button clicked and end-of-month date stored with task
+
+        // specific date selection
+    //save inputted task and selected date to local storage
+
+//
 
 
 
