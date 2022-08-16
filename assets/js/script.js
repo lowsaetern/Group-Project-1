@@ -3,9 +3,8 @@ var todayBtn = document.getElementById("today-Btn")
 var thisWeekBtn = document.getElementById("this-week-Btn")
 var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
-var myKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
-var yelpKey = "dUJs6RmTFhXg_LpfFZdZ8g2ur2grHni6hJA0ucA8avz_358XpiAqaQ89lIbJ0eVRPmnalNz69RTk6pNYE5kgczF_8wEPlaUoqqCD0cZS_90GGXRGzHxCvrGg-s31YnYx"
-var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
+var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
+
 
 // FUNCTIONS
 
@@ -16,13 +15,12 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 // This Month Button clicked and end-of-month date stored with task
 
 
-
 // Amazon search API
 function searchStuff(e) {
     e.preventDefault()
     var inputStuff = document.getElementById("input-stuff")
 
-    fetch("https://api.rainforestapi.com/request?api_key=" + myKey + "&type=search&amazon_domain=amazon.com&search_term=" + inputStuff.value)
+    fetch("https://api.rainforestapi.com/request?api_key=" + amazonKey + "&type=search&amazon_domain=amazon.com&search_term=" + inputStuff.value)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -35,6 +33,9 @@ function searchStuff(e) {
         })
 
 }
+
+// MapQuest search API
+
 
 
 stuffSearchBtn.addEventListener('click', searchStuff)
