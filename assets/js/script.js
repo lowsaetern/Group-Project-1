@@ -5,6 +5,7 @@ var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var mapQuestKey = "OcKnsyCp8AyFKJFn7FCK6vjD4eihKGIv"
+var locationSearchBtn = document.getElementById("search-location")
 
 
 // FUNCTIONS
@@ -49,3 +50,4 @@ function searchLocation(e) {
 
 
 stuffSearchBtn.addEventListener('click', searchStuff)
+locationSearchBtn.addEventListener('click', searchLocation)
