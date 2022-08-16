@@ -9,18 +9,33 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 
 // FUNCTIONS
 
-// wrap in one big mega-function
+// TASK INPUT: wrap in one big mega-function for
+function taskInput {
     // Text Input for "Need Something Done?"
+    var inputTask = document.getElementById("input-task")
+    
         //date selection - either today/this week/this month button OR specific date selection
+        function selectDate {
+
         // Today Button clicked and current date stored with task
-
+            if(
+                var todayClick = document.getElementById("today-Btn")
+            )
         // This Week Button clicked and end-of-week date stored with task
-
+            if else(
+                var thisWeekClick = document.getElementById("this-week-Btn")
+            )
         // This Month Button clicked and end-of-month date stored with task
-
+            if else(
+                var thisMonthClick = document.getElementById("this-month-button")
+            )
         // specific date selection
-    //save inputted task and selected date to local storage
-
+            else
+                var specificDate
+        }
+    //save inputted task and selected date to local storage - SUBMIT BUTTON
+    window.localStorage.setItem(inputTask, )
+}
 //
 
 
@@ -44,5 +59,10 @@ function searchStuff(e) {
 
 }
 
-
+// Amazon search event listener
 stuffSearchBtn.addEventListener('click', searchStuff)
+
+// Date button event listeners
+todayClick.addEventListener('click')
+thisWeekClick.addEventListener('click')
+thisMonthClick.addEventListener('click')
