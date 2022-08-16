@@ -36,23 +36,5 @@ function searchStuff(e) {
 
 }
 
-// Yelp Business Search API
-function searchBusiness() {
-    //e.preventDefault()
-    fetch("https://api.yelp.com/v3/businesses/WavvLdfdP6g8aZTtbBQHTw", {
-        method: 'GET',
-        mode: 'no-cors',
-        term: 'food',
-        //  cache: 'no-cache', 
-        //  credentials: myYelpClientID, 
-        headers: {
-            'Authorization': 'Bearer ' + yelpKey
-        }
-    })
-.then(res => console.log(JSON.stringify(res))) 
-}
-
-
-
 
 stuffSearchBtn.addEventListener('click', searchStuff)
