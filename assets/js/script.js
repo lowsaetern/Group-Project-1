@@ -40,27 +40,6 @@ inputDate.addEventListener('input', () => {
 })
 
 
-todayBtn.addEventListener('click' , () => {
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-if(localItems === null) {
-    taskList = []
-
-} else{
-    taskList = localItems;
-}
-taskList.push(inputVal.value)
-localStorage.setItem('localItem', JSON.stringify(taskList))
-
-})
-
-thisWeekBtn.addEventListener('click' , () => {
-
-})
-
-thisMonthBtn.addEventListener('click' , () => {
-
-})
-
 
 // Today Button clicked and current date stored with task
 
