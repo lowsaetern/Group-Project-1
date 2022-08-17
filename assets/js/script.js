@@ -8,6 +8,44 @@ var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
 
 // FUNCTIONS
+const inputVal = document.getElementsByClassName('inputVal') [0];
+const addTaskButton = document.getElementsByClassName('submit-task') [0];
+const inputDate = document.getElementsByClassName('inputDate') [0];
+
+//const inputTask = document.querySelector('#input-task');
+
+addTaskButton.addEventListener('click' , () => {
+
+//inputTask.addEventListener('submit', e => {
+    e.preventDefault();
+
+let localItems = JSON.parse(localStorage.getItem('localItem'))
+if(localItems === null) {
+    taskList = []
+
+} else{
+    taskList = localItems;
+}
+taskList.push(inputVal.value)
+taskList.push(inputDate.value)
+localStorage.setItem('localItem', JSON.stringify(taskList))
+
+
+})
+//inputDate.addEventListener('input', () => {
+  //  let localItems = JSON.parse(localStorage.getItem('localItem'))
+    //if(localItems === null) {
+       // taskList = []
+    
+  //  } else{
+       // taskList = localItems;
+  //  }
+   // taskList.push(inputDate.value)
+   // localStorage.setItem('localItem', JSON.stringify(taskList))
+//})
+
+
+
 
 // Amazon search API
 function searchStuff(e) {
