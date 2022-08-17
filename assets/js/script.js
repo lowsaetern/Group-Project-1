@@ -3,16 +3,21 @@ var todayBtn = document.getElementById("today-Btn")
 var thisWeekBtn = document.getElementById("this-week-Btn")
 var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
-var myKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
-var yelpKey = "dUJs6RmTFhXg_LpfFZdZ8g2ur2grHni6hJA0ucA8avz_358XpiAqaQ89lIbJ0eVRPmnalNz69RTk6pNYE5kgczF_8wEPlaUoqqCD0cZS_90GGXRGzHxCvrGg-s31YnYx"
-var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
+var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
+var excuseBtn = document.getElementById("excuse-btn")
+var excuse = document.getElementById("excuse")
 
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
-const addTaskButton = document.getElementsByClassName('addTaskButton') [0];
+const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
 
+//const inputTask = document.querySelector('#input-task');
+
 addTaskButton.addEventListener('click' , () => {
+
+//inputTask.addEventListener('submit', e => {
+    e.preventDefault();
 
 let localItems = JSON.parse(localStorage.getItem('localItem'))
 if(localItems === null) {
@@ -27,25 +32,18 @@ localStorage.setItem('localItem', JSON.stringify(taskList))
 
 
 })
-inputDate.addEventListener('input', () => {
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-    if(localItems === null) {
-        taskList = []
+//inputDate.addEventListener('input', () => {
+  //  let localItems = JSON.parse(localStorage.getItem('localItem'))
+    //if(localItems === null) {
+       // taskList = []
     
-    } else{
-        taskList = localItems;
-    }
-    taskList.push(inputDate.value)
-    localStorage.setItem('localItem', JSON.stringify(taskList))
-})
+  //  } else{
+       // taskList = localItems;
+  //  }
+   // taskList.push(inputDate.value)
+   // localStorage.setItem('localItem', JSON.stringify(taskList))
+//})
 
-
-
-// Today Button clicked and current date stored with task
-
-// This Week Button clicked and end-of-week date stored with task
-
-// This Month Button clicked and end-of-month date stored with task
 
 
 
@@ -54,7 +52,7 @@ function searchStuff(e) {
     e.preventDefault()
     var inputStuff = document.getElementById("input-stuff")
 
-    fetch("https://api.rainforestapi.com/request?api_key=" + myKey + "&type=search&amazon_domain=amazon.com&search_term=" + inputStuff.value)
+    fetch("https://api.rainforestapi.com/request?api_key=" + amazonKey + "&type=search&amazon_domain=amazon.com&search_term=" + inputStuff.value)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -67,6 +65,16 @@ function searchStuff(e) {
         })
 
 }
+
+// Excuse API
+excuseBtn.addEventListener('click', function() {
+    fetch("https://excuser.herokuapp.com/v1/excuse")
+.then((res) => res.json())
+.then((data) => {
+    console.log(data[0].excuse)
+    excuse.textContent=data[0].excuse
+})
+})
 
 
 stuffSearchBtn.addEventListener('click', searchStuff)
