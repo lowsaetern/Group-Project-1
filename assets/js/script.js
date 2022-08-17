@@ -15,9 +15,9 @@ const inputDate = document.getElementsByClassName('inputDate') [0];
 //const inputTask = document.querySelector('#input-task');
 
 addTaskButton.addEventListener('click' , () => {
-
+    
 //inputTask.addEventListener('submit', e => {
-    e.preventDefault();
+    //e.preventDefault();
 
 let localItems = JSON.parse(localStorage.getItem('localItem'))
 if(localItems === null) {
@@ -32,20 +32,23 @@ localStorage.setItem('localItem', JSON.stringify(taskList))
 
 
 })
-//inputDate.addEventListener('input', () => {
-  //  let localItems = JSON.parse(localStorage.getItem('localItem'))
-    //if(localItems === null) {
-       // taskList = []
+inputDate.addEventListener('input', () => {
+    let localItems = JSON.parse(localStorage.getItem('localItem'))
+    if(localItems === null) {
+        taskList = []
     
-  //  } else{
-       // taskList = localItems;
-  //  }
-   // taskList.push(inputDate.value)
-   // localStorage.setItem('localItem', JSON.stringify(taskList))
-//})
+    } else{
+        taskList = localItems;
+    }
+    taskList.push(inputDate.value)
+    localStorage.setItem('localItem', JSON.stringify(taskList))
+})
 
+$(".submit-task").click(function() {
 
-
+    var value = $(".inputVal ").val(); 
+    $('.display-box').append(value);
+})
 
 // Amazon search API
 function searchStuff(e) {

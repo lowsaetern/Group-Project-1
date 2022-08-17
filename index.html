@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/skeleton.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body>
 
@@ -19,10 +19,8 @@
     <section class="container" id="do-this">
       <h2>Do This:</h2>
       
-      <div id="assigned-task">
-
+      <div class="display-box" id="assigned-task">
       <!--Empty div to be filled with assigned task from JS-->
-      
       </div>
 
       <p>Don't have everything you need for this task?</p>
@@ -58,12 +56,12 @@
       </div>
       <br>
       <!--Submit Task Button-->
-      <button class="submit-task" type="submit" id="submit-Btn">
+      <button class="submit-task button-primary" type="button" id="submit-Btn">
         Submit Task
       </button>
       </form>
     </section>
-
+      
 <script src="./assets/js/script.js"></script>
   </body>
 </html>
