@@ -9,10 +9,15 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
-const addTaskButton = document.getElementsByClassName('addTaskButton') [0];
+const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
 
+//const inputTask = document.querySelector('#input-task');
+
 addTaskButton.addEventListener('click' , () => {
+
+//inputTask.addEventListener('submit', e => {
+    e.preventDefault();
 
 let localItems = JSON.parse(localStorage.getItem('localItem'))
 if(localItems === null) {
@@ -27,17 +32,18 @@ localStorage.setItem('localItem', JSON.stringify(taskList))
 
 
 })
-inputDate.addEventListener('input', () => {
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-    if(localItems === null) {
-        taskList = []
+//inputDate.addEventListener('input', () => {
+  //  let localItems = JSON.parse(localStorage.getItem('localItem'))
+    //if(localItems === null) {
+       // taskList = []
     
-    } else{
-        taskList = localItems;
-    }
-    taskList.push(inputDate.value)
-    localStorage.setItem('localItem', JSON.stringify(taskList))
-})
+  //  } else{
+       // taskList = localItems;
+  //  }
+   // taskList.push(inputDate.value)
+   // localStorage.setItem('localItem', JSON.stringify(taskList))
+//})
+
 
 
 
