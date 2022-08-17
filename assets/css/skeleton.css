@@ -11,10 +11,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #ffffff;
     background-color: #669999;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px black;
 }
 
 .display-box {
-  font-size: 25px;
+  font-size: 20px;
   color: red;
   border-style: solid;
   border-width: 2px;
