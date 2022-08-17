@@ -7,8 +7,6 @@ var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
 
-
-
 // FUNCTIONS
 
 // Today Button clicked and current date stored with task
