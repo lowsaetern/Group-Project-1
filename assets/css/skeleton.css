@@ -4,13 +4,28 @@
 }
 
 .container h1 {
-  border-style: solid;
+    border-style: solid;
     border-width: 3px;
     border-color: #000000;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #ffffff;
     background-color: #669999;
+}
+
+.display-box {
+  font-size: 25px;
+  color: red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000000;
+  border-radius: 10px;
+  background-color: #ffffff;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 30px;
+  text-align: center;
 }
 /*
 * Skeleton V2.0.4
