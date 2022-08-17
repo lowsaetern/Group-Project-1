@@ -46,9 +46,10 @@ inputDate.addEventListener('input', () => {
 
 $(".submit-task").click(function() {
 
-    var value = $(".inputVal ").val(); 
+    var value = $(".inputVal ").val() + " due " + $(".inputDate").val(); 
     $('.display-box').append(value);
     $(".inputVal").val('');
+    $(".inputDate").val('');
 })
 
 // Amazon search API
