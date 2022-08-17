@@ -6,38 +6,47 @@ var stuffSearchBtn = document.getElementById("search-stuff")
 var myKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var yelpKey = "dUJs6RmTFhXg_LpfFZdZ8g2ur2grHni6hJA0ucA8avz_358XpiAqaQ89lIbJ0eVRPmnalNz69RTk6pNYE5kgczF_8wEPlaUoqqCD0cZS_90GGXRGzHxCvrGg-s31YnYx"
 var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
+var submitBtn = "submit-Btn"
+var todayClick = document.getElementById("today-Btn")
+var thisWeekClick = document.getElementById("this-week-Btn")
+var thisMonthClick = document.getElementById("this-month-button")
+var specificDate = document.getElementById("choose-date")
+var inputTask = document.getElementById("input-task")
 
-// FUNCTIONS
 
-// TASK INPUT: wrap in one big mega-function for
-function taskInput {
+// TASK INPUT: wrap in one big mega-function in JavaScript
+function taskInput() {
     // Text Input for "Need Something Done?"
-    var inputTask = document.getElementById("input-task")
+    
     
         //date selection - either today/this week/this month button OR specific date selection
-        function selectDate {
+        function selectDate() {
 
         // Today Button clicked and current date stored with task
-            if(
-                var todayClick = document.getElementById("today-Btn")
-            )
+            if( todayClick === 'click'
+            ) {
+                console.log(moment().format("MMM Do YY"))
+            }
         // This Week Button clicked and end-of-week date stored with task
-            if else(
-                var thisWeekClick = document.getElementById("this-week-Btn")
-            )
+            else if( thisWeekClick === 'click'
+            ) {
+                console.log(moment().add(7, 'days').calendar())
+            }
         // This Month Button clicked and end-of-month date stored with task
-            if else(
-                var thisMonthClick = document.getElementById("this-month-button")
-            )
+            else if( thisMonthClick === 'click'
+            ) {
+                console.log(moment().add(30, 'days').calendar())
+            }
         // specific date selection
-            else
-                var specificDate
+            else { console.log(specificDate.value)
+            }
         }
     //save inputted task and selected date to local storage - SUBMIT BUTTON
-    window.localStorage.setItem(inputTask, )
-}
+    //var taskName = inputTask.value
+    //var taskDate = 
+    //localStorage.setItem(taskName, taskDate)
+    }
 //
-
 
 
 // Amazon search API
@@ -63,6 +72,9 @@ function searchStuff(e) {
 stuffSearchBtn.addEventListener('click', searchStuff)
 
 // Date button event listeners
-todayClick.addEventListener('click')
+todayClick.addEventListener('click', selectDate)
 thisWeekClick.addEventListener('click')
 thisMonthClick.addEventListener('click')
+
+//submit button event listener
+//submitBtn.addEventListener('click')
