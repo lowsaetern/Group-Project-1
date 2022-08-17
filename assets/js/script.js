@@ -4,6 +4,8 @@ var thisWeekBtn = document.getElementById("this-week-Btn")
 var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
+var excuseBtn = document.getElementById("excuse-btn")
+var excuse = document.getElementById("excuse")
 
 
 
@@ -35,6 +37,15 @@ function searchStuff(e) {
 
 }
 
+// Excuse API
+excuseBtn.addEventListener('click', function() {
+    fetch("https://excuser.herokuapp.com/v1/excuse")
+.then((res) => res.json())
+.then((data) => {
+    console.log(data[0].excuse)
+    excuse.textContent=data[0].excuse
+})
+})
 
 
 stuffSearchBtn.addEventListener('click', searchStuff)
