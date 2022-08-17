@@ -10,6 +10,7 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('addTaskButton') [0];
+const inputDate = document.getElementsByClassName('inputDate') [0];
 
 addTaskButton.addEventListener('click' , () => {
 
@@ -21,8 +22,46 @@ if(localItems === null) {
     taskList = localItems;
 }
 taskList.push(inputVal.value)
+taskList.push(inputDate.value)
 localStorage.setItem('localItem', JSON.stringify(taskList))
+
+
 })
+inputDate.addEventListener('input', () => {
+    let localItems = JSON.parse(localStorage.getItem('localItem'))
+    if(localItems === null) {
+        taskList = []
+    
+    } else{
+        taskList = localItems;
+    }
+    taskList.push(inputDate.value)
+    localStorage.setItem('localItem', JSON.stringify(taskList))
+})
+
+
+todayBtn.addEventListener('click' , () => {
+    let localItems = JSON.parse(localStorage.getItem('localItem'))
+if(localItems === null) {
+    taskList = []
+
+} else{
+    taskList = localItems;
+}
+taskList.push(inputVal.value)
+localStorage.setItem('localItem', JSON.stringify(taskList))
+
+})
+
+thisWeekBtn.addEventListener('click' , () => {
+
+})
+
+thisMonthBtn.addEventListener('click' , () => {
+
+})
+
+
 // Today Button clicked and current date stored with task
 
 // This Week Button clicked and end-of-week date stored with task
