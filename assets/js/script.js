@@ -9,13 +9,24 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 
 // FUNCTIONS
 
+// Save task description
+
 // Today Button clicked and current date stored with task
 
 // This Week Button clicked and end-of-week date stored with task
 
 // This Month Button clicked and end-of-month date stored with task
 
+// Specific Date option
 
+// Store task name and date to local storage
+
+// Order the task description by date, soonest first
+
+// Pull soonest task (by date) from local storage and populate empty div
+
+
+// Second API (MapQuest?)
 
 // Amazon search API
 function searchStuff(e) {
