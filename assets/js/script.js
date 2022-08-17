@@ -48,6 +48,7 @@ $(".submit-task").click(function() {
 
     var value = $(".inputVal ").val(); 
     $('.display-box').append(value);
+    $(".inputVal").val('');
 })
 
 // Amazon search API
