@@ -10,16 +10,15 @@ var myYelpClientID = "NYv4yWFnhs_jumHwLKxoIw"
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
-const inputDate = document.getElementsByClassName('inputDate') [0];
-
-//const inputTask = document.querySelector('#input-task');
-
-addTaskButton.addEventListener('click' , () => {
+const inputTask = document.querySelector('#input-task');
 
 //inputTask.addEventListener('submit', e => {
-    e.preventDefault();
+
+addTaskButton.addEventListener('click' , e => {
+ e.preventDefault();
 
 let localItems = JSON.parse(localStorage.getItem('localItem'))
+
 if(localItems === null) {
     taskList = []
 
@@ -27,7 +26,8 @@ if(localItems === null) {
     taskList = localItems;
 }
 taskList.push(inputVal.value)
-taskList.push(inputDate.value)
+
+
 localStorage.setItem('localItem', JSON.stringify(taskList))
 
 
