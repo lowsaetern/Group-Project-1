@@ -6,16 +6,14 @@ var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
-
+var displayText = document.getElementById("assigned-task")
+var clearTask = document.getElementById("clearBtn");
 
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
 const inputTask = document.querySelector('#input-task');
-// Clear Task variable for added button
-const clearTask = document.getElementById("clearBtn");
-
 
 $(".submit-task").click(function() {
 
@@ -24,15 +22,20 @@ $(".submit-task").click(function() {
     $('.display-box').append(value);
     $(".inputVal").val('');
     $(".inputDate").val('');
+    displayText.style.display = 'block'
     };
 
     //localStorage.setItem('Task', JSON.stringify(value));
 })
 
-// Clear Task Button event listener and command?
-clearTask.addEventListener('click', function() {
-    ('.display-box').remove(value);
-})
+// Clear Task Function
+function taskComplete(e) {
+    e.preventDefault()
+    displayText.style.display = "none"
+}
+
+// Clear Task Event Listener
+clearTask.addEventListener('click', taskComplete)
 
 //window.addEventListener('load', function() {
     //value = JSON.parse(localStorage.getItem('Task'));
