@@ -10,33 +10,6 @@ var excuse = document.getElementById("excuse")
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
-//<<<<<<< HEAD
-const inputTask = document.querySelector('#input-task');
-
-//inputTask.addEventListener('submit', e => {
-
-addTaskButton.addEventListener('click' , e => {
- e.preventDefault();
-
-let localItems = JSON.parse(localStorage.getItem('localItem'))
-
-if(localItems === null) {
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-if (localItems === null) {
-//>>>>>>> c2f9051366433d0cf28e390f47b870acae99cebc
-    taskList = []
-
-} else{
-    taskList = localItems;
-}
-taskList.push(inputVal.value)
-
-
-localStorage.setItem('localItem', JSON.stringify(taskList)
-
-
-})
-//=======
 const inputDate = document.getElementsByClassName('inputDate') [0];
 const inputTask = document.querySelector('#input-task');
 
@@ -63,17 +36,28 @@ addTaskButton.addEventListener('click' , () => {
 //inputTask.addEventListener('input', e => {
     //e.preventDefault();
 
+let localItems = JSON.parse(localStorage.getItem('localItem'))
+if (localItems === null) {
+    taskList = []
 
+} else{
+    taskList = localItems;
+}
+taskList.push(inputVal.value)
+localStorage.setItem('localItem', JSON.stringify(taskList))
+
+
+})
 inputDate.addEventListener('input', () => {
     let localItems = JSON.parse(localStorage.getItem('localItem'))
     if(localItems === null) {
-        taskList = []
+       taskList = []
     
     } else{
-        taskList = localItems;
+       taskList = localItems;
     }
     taskList.push(inputDate.value)
-    localStorage.setItem('localItem', JSON.stringify(taskList))
+   localStorage.setItem('localItem', JSON.stringify(taskList))
 })
 
 // Amazon search API
