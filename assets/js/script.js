@@ -11,16 +11,33 @@ var excuse = document.getElementById("excuse")
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
+const inputTask = document.querySelector('#input-task');
 
-//const inputTask = document.querySelector('#input-task');
+
+$(".submit-task").click(function() {
+
+    var value = $(".inputVal").val() + " due " + $(".inputDate").val(); 
+    while ($(".inputVal").val() !='' && $(".inputDate").val() !='') {
+    $('.display-box').append(value);
+    $(".inputVal").val('');
+    $(".inputDate").val('');
+    };
+
+    //localStorage.setItem('Task', JSON.stringify(value));
+})
+
+//window.addEventListener('load', function() {
+    //value = JSON.parse(localStorage.getItem('Task'));
+    //$('.display-box').append(value);
+//})
 
 addTaskButton.addEventListener('click' , () => {
     
-//inputTask.addEventListener('submit', e => {
+//inputTask.addEventListener('input', e => {
     //e.preventDefault();
 
 let localItems = JSON.parse(localStorage.getItem('localItem'))
-if(localItems === null) {
+if (localItems === null) {
     taskList = []
 
 } else{
@@ -44,16 +61,6 @@ inputDate.addEventListener('input', () => {
     localStorage.setItem('localItem', JSON.stringify(taskList))
 })
 
-$(".submit-task").click(function() {
-
-    var value = $(".inputVal").val() + " due " + $(".inputDate").val(); 
-    while ($(".inputVal").val() !='' && $(".inputDate").val() !='') {
-    $('.display-box').append(value);
-    $(".inputVal").val('');
-    $(".inputDate").val('');
-    }
-})
-
 // Amazon search API
 function searchStuff(e) {
     e.preventDefault()
@@ -72,7 +79,7 @@ function searchStuff(e) {
         })
 
 }
-
+//localStorage.clear();
 // Excuse API
 excuseBtn.addEventListener('click', function() {
     fetch("https://excuser.herokuapp.com/v1/excuse")
