@@ -1,76 +1,136 @@
 // GLOBAL VARIABLES
-var todayBtn = document.getElementById("today-Btn")
-var thisWeekBtn = document.getElementById("this-week-Btn")
-var thisMonthBtn = document.getElementById("this-month-Btn")
 var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
-var displayText = document.getElementById("assigned-task")
-var clearTask = document.getElementById("clearBtn");
 
-// FUNCTIONS
-const inputVal = document.getElementsByClassName('inputVal') [0];
-const addTaskButton = document.getElementsByClassName('submit-task') [0];
-const inputDate = document.getElementsByClassName('inputDate') [0];
-const inputTask = document.querySelector('#input-task');
 
-$(".submit-task").click(function() {
 
-    var value = $(".inputVal").val() + " due " + $(".inputDate").val();
-    while ($(".inputVal").val() !='' && $(".inputDate").val() !='') {
-    $('.display-box').append(value);
-    $(".inputVal").val('');
-    $(".inputDate").val('');
-    displayText.style.display = 'block'
-    };
+//New Task List Functions
+window.addEventListener('load', () => {
+    todos = JSON.parse(localStorage.getItem('todos')) || [];
+    const nameInput = document.querySelector('#name');
+    const newTodoForm = document.querySelector('#input-task');
 
-    //localStorage.setItem('Task', JSON.stringify(value));
+    const username = localStorage.getItem('username') || '';
+
+    nameInput.value = username;
+    nameInput.addEventListener('change', e =>{
+        localStorage.setItem('username', e.target.value);
+    })
+
+    newTodoForm.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const todo ={
+            content: e.target.elements.valInput.value,
+            category: e.target.elements.category.value,
+            done: false,
+            createdAt: new Date().getTime()
+        }
+        
+        todos.push(todo);
+        localStorage.setItem('todos', JSON.stringify(todos));
+
+        e.target.reset();
+
+        DisplayTodos();
+
+    })
+
+    DisplayTodos();
+
 })
+function DisplayTodos () {
+    const todoList = document.querySelector('#todo-list');
+    
+    todoList.innerHTML = '';
 
-// Clear Task Function
-function taskComplete(e) {
-    e.preventDefault()
-    displayText.style.display = "none"
+    todos.forEach(todo => {
+        const todoItem = document.createElement('div');
+        todoItem.classList.add('todo-item');
+        
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        const span = document.createElement('span');
+        const content = document.createElement('div');
+        const actions = document.createElement('div');
+        const editButton = document.createElement('button');
+        const deleteButton = document.createElement('button');
+
+        input.type = 'checkbox';
+        input.checked = todo.done;
+        span.classList.add('bubble');
+
+        if (todo.category == 'non-priority') {
+            span.classList.add('non-priority');
+        } 
+        else {
+            span.classList.add('priority');
+        }
+
+        content.classList.add('todo-content');
+        actions.classList.add('actions');
+        editButton.classList.add('edit');
+        deleteButton.classList.add('delete');
+
+        content.innerHTML = `<input type="text" value="${todo.content}" 
+        readonly >`;
+        editButton.innerHTML = 'Edit';
+        deleteButton.innerHTML = 'Delete';
+
+        label.appendChild(input);
+        label.appendChild(span);
+        actions.appendChild(editButton);
+        actions.appendChild(deleteButton);
+        todoItem.appendChild(label);
+        todoItem.appendChild(content);
+        todoItem.appendChild(actions);
+
+        todoList.appendChild(todoItem);
+        if (todo.done) {
+			todoItem.classList.add('done');
+		}
+		
+		input.addEventListener('change', (e) => {
+			todo.done = e.target.checked;
+			localStorage.setItem('todos', JSON.stringify(todos));
+
+			if (todo.done) {
+				todoItem.classList.add('done');
+			} else {
+				todoItem.classList.remove('done');
+			}
+
+			DisplayTodos()
+
+		})
+
+		editButton.addEventListener('click', (e) => {
+			const input = content.querySelector('input');
+			input.removeAttribute('readonly');
+			input.focus();
+			input.addEventListener('blur', (e) => {
+				input.setAttribute('readonly', true);
+				todo.content = e.target.value;
+				localStorage.setItem('todos', JSON.stringify(todos));
+				DisplayTodos()
+
+			})
+		})
+
+		deleteButton.addEventListener('click', (e) => {
+			todos = todos.filter(t => t != todo);
+			localStorage.setItem('todos', JSON.stringify(todos));
+			DisplayTodos()
+		})
+
+
+    })
 }
 
-// Clear Task Event Listener
-clearTask.addEventListener('click', taskComplete)
-
-//window.addEventListener('load', function() {
-    //value = JSON.parse(localStorage.getItem('Task'));
-    //$('.display-box').append(value);
-//})
-
-addTaskButton.addEventListener('click' , () => {
-    
-//inputTask.addEventListener('input', e => {
-    //e.preventDefault();
-
-let localItems = JSON.parse(localStorage.getItem('localItem'))
-if (localItems === null) {
-    taskList = []
-
-} else{
-    taskList = localItems;
-}
-taskList.push(inputVal.value)
-taskList.push(inputDate.value)
-localStorage.setItem('localItem', JSON.stringify(taskList))
 
 
-})
-inputDate.addEventListener('input', () => {
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-    if(localItems === null) {
-        taskList = []
-    
-    } else{
-        taskList = localItems;
-    }
-    taskList.push(inputDate.value)
-    localStorage.setItem('localItem', JSON.stringify(taskList))
-})
 
 // Amazon search API
 function searchStuff(e) {
@@ -90,7 +150,7 @@ function searchStuff(e) {
         })
 
 }
-//localStorage.clear();
+
 // Excuse API
 excuseBtn.addEventListener('click', function() {
     fetch("https://excuser.herokuapp.com/v1/excuse")
