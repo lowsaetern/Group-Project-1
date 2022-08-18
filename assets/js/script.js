@@ -18,7 +18,7 @@ const inputTask = document.querySelector('#input-task');
 $(".submit-task").click(function() {
 
     var value = $(".inputVal").val() + " due " + $(".inputDate").val();
-    while ($(".inputVal").val() !='' && $(".inputDate").val() !='') {
+    while ($(".inputVal").val() !='' && $(".inputDate").val() !='' && $('.display-box').val() === '') {
     $('.display-box').append(value);
     $(".inputVal").val('');
     $(".inputDate").val('');
@@ -28,14 +28,20 @@ $(".submit-task").click(function() {
     //localStorage.setItem('Task', JSON.stringify(value));
 })
 
+$(document).ready(function(){
+    $(".clear-task").click(function(){
+      $(".display-box").empty();
+    });
+  });
+
 // Clear Task Function
-function taskComplete(e) {
-    e.preventDefault()
-    displayText.style.display = "none"
-}
+//function taskComplete(e) {
+    //e.preventDefault()
+    //displayText.style.display = "none"
+//}
 
 // Clear Task Event Listener
-clearTask.addEventListener('click', taskComplete)
+//clearTask.addEventListener('click', taskComplete)
 
 //window.addEventListener('load', function() {
     //value = JSON.parse(localStorage.getItem('Task'));
