@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/skeleton.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body>
 
@@ -18,20 +19,26 @@
     <section class="container" id="do-this">
       <h2>Do This:</h2>
       
-      <div id="assigned-task">
-
-      <!--Empty div to be filled with assigned task from JS-->
-      
+      <div class="display-box" id="assigned-task">
+      <!--Empty ul to be filled with assigned task from JS-->
       </div>
-
+      <br>
+      <p>Don't have everything you need for this task?</p>
       <!--Amazon Product Search API-->
       <form  id="stuff-form">
-        <input id="input-stuff" type="search" />
+        <input id="input-stuff" type="search" placeholder="Find it here."/>
         <button class="button-primary" id="search-stuff">
             Search
         </button>
       </form>
       <a target="_blank" id="click-image"><img id="search-image" src="" /></a>
+
+
+      <div>
+        <p>Don't feel like working?</p>
+        <button class="button-primary" id="excuse-btn">Click for an Excuse.</button>
+        <p id="excuse"></p>
+      </div>
 
     </section>
     
@@ -40,23 +47,21 @@
       <h3>Need something done?</h3>
 
       <form id="input-task">
-        <input class="inputVal" type="text" placeholder="Write it here." /> 
+        <input class="inputVal" id="valInput" type="text" placeholder="Write it here." /> 
 
 
       <div>
 
-          <input class="inputDate" type="date" />
+          <input class="inputDate" id="dateInput" type="date" />
         
       </div>
       <br>
       <!--Submit Task Button-->
-      <button class="submit-task" type="submit" id="submit-Btn">
+      <button class="submit-task button-primary" type="button" id="submit-Btn">
         Submit Task
       </button>
       </form>
     </section>
-
-
 
 <script src="./assets/js/script.js"></script>
   </body>
