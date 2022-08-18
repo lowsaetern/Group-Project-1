@@ -7,16 +7,18 @@ var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
 
+
 // FUNCTIONS
 const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
 const inputTask = document.querySelector('#input-task');
+const clearTask = document.getElementById("clearBtn");
 
 
 $(".submit-task").click(function() {
 
-    var value = $(".inputVal").val() + " due " + $(".inputDate").val(); 
+    var value = $(".inputVal").val() + " due " + $(".inputDate").val();
     while ($(".inputVal").val() !='' && $(".inputDate").val() !='') {
     $('.display-box').append(value);
     $(".inputVal").val('');
@@ -24,6 +26,10 @@ $(".submit-task").click(function() {
     };
 
     //localStorage.setItem('Task', JSON.stringify(value));
+})
+
+clearTask.addEventListener('click', function() {
+    ('.display-box').remove(value);
 })
 
 //window.addEventListener('load', function() {
