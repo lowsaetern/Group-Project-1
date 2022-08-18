@@ -13,6 +13,7 @@ const inputVal = document.getElementsByClassName('inputVal') [0];
 const addTaskButton = document.getElementsByClassName('submit-task') [0];
 const inputDate = document.getElementsByClassName('inputDate') [0];
 const inputTask = document.querySelector('#input-task');
+// Clear Task variable for added button
 const clearTask = document.getElementById("clearBtn");
 
 
@@ -28,6 +29,7 @@ $(".submit-task").click(function() {
     //localStorage.setItem('Task', JSON.stringify(value));
 })
 
+// Clear Task Button event listener and command?
 clearTask.addEventListener('click', function() {
     ('.display-box').remove(value);
 })
