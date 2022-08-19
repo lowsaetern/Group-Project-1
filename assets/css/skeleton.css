@@ -15,21 +15,49 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.display-box {
-  font-size: 20px;
-  color: red;
+.display-name {
+  font-size: 38px;
   border-style: solid;
   border-width: 2px;
   border-color: #000000;
   border-radius: 10px;
   background-color: #ffffff;
-  max-width: 30%;
+  max-width: 40%;
   margin-left: auto;
   margin-right: auto;
-  min-height: 30px;
+  min-height: 35px;
   text-align: center;
   display:flex;
 }
+
+.add-task {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000000;
+  border-radius: 10px;
+  max-width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 35px;
+  text-align: center;
+  display:flex;
+}
+
+.options {
+  max-width: 50%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.priority {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -230,8 +258,8 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
+  color: #ffffff;
+  border-color: #000000;
   outline: 0; }
 .button.button-primary,
 button.button-primary,
@@ -475,7 +503,13 @@ input[type="checkbox"]{
 
 .bubble.non-priority {
   border-color: darkblue;
+  background-color: #ffffff;
 }
+.bubble.priority {
+  border-color: red;
+  background-color: #ffffff;
+}
+
 
 .bubble::after {
   content: "";
@@ -497,7 +531,7 @@ input:checked ~ .bubble::after {
 }
 
 .container .options label div {
-  color: black;
+  color: #ffffff;
   font-size: 1.125rem;
   margin-top: 1rem;
 }
@@ -527,6 +561,9 @@ input:checked ~ .bubble::after {
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .edit {
   color: black;
@@ -546,6 +583,7 @@ input:checked ~ .bubble::after {
   display: block;
   margin-right: 1rem;
   cursor: pointer;
+  background-color: #ffffff;
 }
 .todo-item .todo-content{
   flex: 1 1 0%;
@@ -571,11 +609,11 @@ input:checked ~ .bubble::after {
 }
 .todo-item .actions .edit{
   margin-right: 0.75rem;
-  background-color: darkslateblue;
+  background-color: #669999;
 }
 .todo-item .actions .delete{
   margin-right: 0.5rem;
-  background-color: orangered;
+  background-color: #3d5c5c;
 }
 
 .todo-item.done .todo-content input {

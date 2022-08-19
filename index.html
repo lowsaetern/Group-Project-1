@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/skeleton.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body>
 
@@ -14,19 +13,18 @@
     <header class="container" id="main-title">
         <h1>What Do I Do Now?</h1>
     </header>
-  <!--Greeting -->
 
 <!--Greeting with Saved Name-->
-<section class="greeting">
-  <h2 class="title">
-      Hello! <input type="text" id="name" placeholder="Name here">
-  </h2>
+<section class="greeting container">
+  <h2 class="title"> Hello!</h2>
+  <input class="display-name" type="text" id="name" placeholder="Name here">
+</section>
 <!--Task Input Section Begins-->
-</section><section class="container" id="need-something-done">
+<section class="container" id="need-something-done">
   <h3>Need something done?</h3>
 
   <!--Input Task Form-->
-  <form id="input-task">
+  <form class="task-input" id="input-task">
     <input 
     class="inputVal" 
     name="valInput"
@@ -39,7 +37,7 @@
     <div class="options">
 
       <!--Priority Option-->
-        <label>
+        <label class="priority">
           <input
             type="radio"
             name="category"
@@ -50,7 +48,7 @@
         </label>
 
       <!--Non-Priority Option-->
-        <label>
+        <label class="priority">
           <input
             type="radio"
             name="category"
@@ -62,12 +60,12 @@
     </div>
 
     <!--Submit Task Button-->
-    <input type="submit" value="Add Task " />
+    <input class="add-task" type="submit" value="Add Task" />
     </form>
 </section>
 
 <!--Assigned Task List-->
-<section class="todo-list">
+<section class="todo-list container">
   <h3>Task List</h3>
   <div class="list" id="todo-list">
    
@@ -75,6 +73,7 @@
 </section>
 
 <!--Amazon Product Search API-->
+<section class="container">
       <p>Don't have everything you need for this task?</p>
 
       <form  id="stuff-form">
@@ -91,8 +90,7 @@
         <button class="button-primary" id="excuse-btn">Click for an Excuse.</button>
         <p id="excuse"></p>
       </div>
-
-    </section>
+ </section>
     
 <script src="./assets/js/script.js"></script>
   </body>
