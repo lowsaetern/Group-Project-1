@@ -11,5 +11,7 @@ To install the project, we coded everything from scratch. We used a lot of refer
 ## Usage
 For people who may be overwhelmed by seeing a whole list of tasks they need to complete, allowing them to focus on one at a time could improve productivity and allow them to actually get things done.
 
+![Screen Shot 2022-08-18 at 6 38 42 PM](https://user-images.githubusercontent.com/108239676/185523981-77c8e2ce-a707-4685-9e20-06cebf51ef9e.png)
+
 
 ## Website
