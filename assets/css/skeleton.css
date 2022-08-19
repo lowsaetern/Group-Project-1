@@ -28,6 +28,7 @@
   margin-right: auto;
   min-height: 30px;
   text-align: center;
+  display:flex;
 }
 /*
 * Skeleton V2.0.4
@@ -430,6 +431,157 @@ hr {
   clear: both; }
 
 
+
+  /*------------New Task List Styling-------------*/
+.container .options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.container .options label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #669999;
+  border-color: #000000;
+  border-radius: 0.5rem;
+  box-shadow: #D1D1D1;
+  cursor: pointer;
+}
+.container .bubble-text {
+  color: #FFF;
+  background-color: #669999;
+
+}
+
+
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height:20px;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+.bubble.non-priority {
+  border-color: darkblue;
+}
+
+.bubble::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  background-color: red;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+.bubble.non-priority::after{
+  background-color: darkblue;
+}
+input:checked ~ .bubble::after {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+
+.container .options label div {
+  color: black;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+}
+
+.container input[type="submit"] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  color: black;
+  background-color: #E1E1E1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.container input[type="submit"]:hover {
+  opacity: 0.75;
+}
+
+.todo-list .list {
+  margin: 1rem 0;
+}
+.todo-list .todo-item{
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.edit {
+  color: black;
+  background-color: #FFF;
+}
+.delete {
+  color: black;
+  background-color: #FFF;
+}
+.actions {
+  background-color: #FFF;
+}
+.todo-content{
+  background-color: #FFF;
+}
+.todo-item label{
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.todo-item .todo-content{
+  flex: 1 1 0%;
+}
+.todo-item .todo-content input{
+  color: black;
+  font-size: 1.125rem;
+}
+.todo-item .actions{
+  display: flex;
+  align-items: center;
+}
+.todo-item .actions button{
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color:#FFF;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.todo-item .actions button:hover {
+  opacity: 0.75;
+}
+.todo-item .actions .edit{
+  margin-right: 0.75rem;
+  background-color: darkslateblue;
+}
+.todo-item .actions .delete{
+  margin-right: 0.5rem;
+  background-color: orangered;
+}
+
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  color: #888;
+}
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*

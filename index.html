@@ -14,7 +14,63 @@
     <header class="container" id="main-title">
         <h1>What Do I Do Now?</h1>
     </header>
+  <!--Greeting -->
+
+<section class="greeting">
+  <h2 class="title">
+      Hello! <input type="text" id="name" placeholder="Name here">
+  </h2>
+</section><section class="container" id="need-something-done">
+  <h3>Need something done?</h3>
+
+  <form id="input-task">
+    <input 
+    class="inputVal" 
+    name="valInput"
+    id="valInput" 
+    type="text" 
+    placeholder="Write it here." /> 
+
+    <h4> Pick a Category</h4>
+    <div class="options">
+
+        <label>
+          <input
+            type="radio"
+            name="category"
+            id="category1"
+            value="priority" />
+            <span class="bubble priority"></span>
+            <div class="bubble-text">Priority</div>
+        </label>
+
+
+        <label>
+          <input
+            type="radio"
+            name="category"
+            id="category2"
+            value="non-priority" />
+            <span class="bubble non-priority"></span>
+            <div class="bubble-text">Non-Priority</div>
+        </label>
+    </div>
+
+    <input type="submit" value="Add Task " />
+    </form>
+</section>
+
+<section class="todo-list">
+  <h3>Task List</h3>
+  <div class="list" id="todo-list">
+   
+  </div>
+</section>
+
+
+
   
+<<<<<<< HEAD
   <!--Assigned Task Section-->
     <section class="container" id="do-this">
       <h2>Do This:</h2>
@@ -26,8 +82,9 @@
           Task Complete
       </button>
       <br>
+=======
+>>>>>>> dab262d08be20f44c6fbe4254c889058a19d8bee
       <p>Don't have everything you need for this task?</p>
-
       <!--Amazon Product Search API-->
       <form  id="stuff-form">
         <input id="input-stuff" type="search" placeholder="Find it here."/>
@@ -45,25 +102,7 @@
 
     </section>
     
-  <!--Task Input Section-->
-    <section class="container" id="need-something-done">
-      <h3>Need something done?</h3>
 
-      <form id="input-task">
-        <input class="inputVal" id="valInput" type="text" placeholder="Write it here." /> 
-
-      <div>
-
-          <input class="inputDate" id="dateInput" type="date" />
-        
-      </div>
-      <br>
-      <!--Submit Task Button-->
-      <button class="submit-task button-primary" type="button" id="submit-Btn">
-        Submit Task
-      </button>
-      </form>
-    </section>
 
 <script src="./assets/js/script.js"></script>
   </body>
