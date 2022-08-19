@@ -3,49 +3,9 @@ var stuffSearchBtn = document.getElementById("search-stuff")
 var amazonKey = "4591EDE1B7CE49AEB4BDD4631503A1CC"
 var excuseBtn = document.getElementById("excuse-btn")
 var excuse = document.getElementById("excuse")
-<<<<<<< HEAD
 var displayText = document.getElementById("assigned-task")
 var clearTask = document.getElementById("clearBtn");
 
-// FUNCTIONS
-const inputVal = document.getElementsByClassName('inputVal') [0];
-const addTaskButton = document.getElementsByClassName('submit-task') [0];
-const inputDate = document.getElementsByClassName('inputDate') [0];
-const inputTask = document.querySelector('#input-task');
-
-$(".submit-task").click(function() {
-
-    var value = $(".inputVal").val() + " due " + $(".inputDate").val();
-    while ($(".inputVal").val() !='' && $(".inputDate").val() !='' && $('.display-box').val() === '') {
-    $('.display-box').append(value);
-    $(".inputVal").val('');
-    $(".inputDate").val('');
-    displayText.style.display = 'block'
-    };
-
-    //localStorage.setItem('Task', JSON.stringify(value));
-})
-
-$(document).ready(function(){
-    $(".clear-task").click(function(){
-      $(".display-box").empty();
-    });
-  });
-
-// Clear Task Function
-//function taskComplete(e) {
-    //e.preventDefault()
-    //displayText.style.display = "none"
-//}
-
-// Clear Task Event Listener
-//clearTask.addEventListener('click', taskComplete)
-=======
-
-
->>>>>>> dab262d08be20f44c6fbe4254c889058a19d8bee
-
-//New Task List Functions
 window.addEventListener('load', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
