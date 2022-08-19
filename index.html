@@ -16,13 +16,16 @@
     </header>
   <!--Greeting -->
 
+<!--Greeting with Saved Name-->
 <section class="greeting">
   <h2 class="title">
       Hello! <input type="text" id="name" placeholder="Name here">
   </h2>
+<!--Task Input Section Begins-->
 </section><section class="container" id="need-something-done">
   <h3>Need something done?</h3>
 
+  <!--Input Task Form-->
   <form id="input-task">
     <input 
     class="inputVal" 
@@ -31,9 +34,11 @@
     type="text" 
     placeholder="Write it here." /> 
 
+    <!--Prioritization of Tasks-->
     <h4> Pick a Category</h4>
     <div class="options">
 
+      <!--Priority Option-->
         <label>
           <input
             type="radio"
@@ -44,7 +49,7 @@
             <div class="bubble-text">Priority</div>
         </label>
 
-
+      <!--Non-Priority Option-->
         <label>
           <input
             type="radio"
@@ -56,10 +61,12 @@
         </label>
     </div>
 
+    <!--Submit Task Button-->
     <input type="submit" value="Add Task " />
     </form>
 </section>
 
+<!--Assigned Task List-->
 <section class="todo-list">
   <h3>Task List</h3>
   <div class="list" id="todo-list">
@@ -67,11 +74,9 @@
   </div>
 </section>
 
-
-
-  
+<!--Amazon Product Search API-->
       <p>Don't have everything you need for this task?</p>
-      <!--Amazon Product Search API-->
+
       <form  id="stuff-form">
         <input id="input-stuff" type="search" placeholder="Find it here."/>
         <button class="button-primary" id="search-stuff">
@@ -80,6 +85,7 @@
       </form>
       <a target="_blank" id="click-image"><img id="search-image" src="" /></a>
 
+<!--Random Excuse Generator API-->
       <div>
         <p>Don't feel like working?</p>
         <button class="button-primary" id="excuse-btn">Click for an Excuse.</button>
@@ -88,8 +94,6 @@
 
     </section>
     
-
-
 <script src="./assets/js/script.js"></script>
   </body>
 </html>
