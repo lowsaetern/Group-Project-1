@@ -3,9 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <title>What Do I Do Now?</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/skeleton.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+
+  <!--Header-->
+    <header class="container" id="main-title">
+        <h1>What Do I Do Now?</h1>
+    </header>
+
+<!--Greeting with Saved Name-->
+<section class="greeting container">
+  <h2 class="title"> Hello!</h2>
+  <input class="display-name" type="text" id="name" placeholder="Name here">
+</section>
+<!--Task Input Section Begins-->
+<section class="container" id="need-something-done">
+  <h3>Need something done?</h3>
+
+  <!--Input Task Form-->
+  <form class="task-input" id="input-task">
+    <input 
+    class="inputVal" 
+    name="valInput"
+    id="valInput" 
+    type="text" 
+    placeholder="Write it here." /> 
+
+    <!--Prioritization of Tasks-->
+    <h4> Pick a Category</h4>
+    <div class="options">
+
+      <!--Priority Option-->
+        <label class="priority">
+          <input
+            type="radio"
+            name="category"
+            id="category1"
+            value="priority" />
+            <span class="bubble priority"></span>
+            <div class="bubble-text">Priority</div>
+        </label>
+
+      <!--Non-Priority Option-->
+        <label class="priority">
+          <input
+            type="radio"
+            name="category"
+            id="category2"
+            value="non-priority" />
+            <span class="bubble non-priority"></span>
+            <div class="bubble-text">Non-Priority</div>
+        </label>
+    </div>
+
+    <!--Submit Task Button-->
+    <input class="add-task" type="submit" value="Add Task" />
+    </form>
+</section>
+
+<!--Assigned Task List-->
+<section class="todo-list container">
+  <h3>Task List</h3>
+  <div class="list" id="todo-list">
+   
+  </div>
+</section>
+
+<!--Amazon Product Search API-->
+<section class="container">
+      <p>Don't have everything you need for this task?</p>
+
+      <form  id="stuff-form">
+        <input id="input-stuff" type="search" placeholder="Find it here."/>
+        <button class="button-primary" id="search-stuff">
+            Search
+        </button>
+      </form>
+      <a target="_blank" id="click-image"><img id="search-image" src="" /></a>
+
+<!--Random Excuse Generator API-->
+      <div>
+        <p>Don't feel like working?</p>
+        <button class="button-primary" id="excuse-btn">Click for an Excuse.</button>
+        <p id="excuse"></p>
+      </div>
+ </section>
     
-    
+<script src="./assets/js/script.js"></script>
   </body>
 </html>
